@@ -61,7 +61,11 @@ World Wide Web Services > [X] Common HTTP Features ([X] all entities)
 <img width="285" alt="Screenshot 2024-04-02 at 10 50 49 PM" src="https://github.com/sirmichaelyoung/osticket-prereqs/assets/163785883/b70b6ba2-6743-42a3-a7c9-719202c6cbb6">
 
 Include IIS Management Console
-Internet Information Services -> Web Management Tools -> IIS Management Console -> [X] IIS Management Console
+
+Internet Information Services > Web Management Tools > [X] IIS Management Console
+
+<img width="286" alt="Screenshot 2024-04-02 at 11 19 59 PM" src="https://github.com/sirmichaelyoung/osticket-prereqs/assets/163785883/eb534054-8543-4cd1-85ad-7d579a506fc6">
+
 
 </p>
 <br />
