@@ -28,6 +28,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 - VC_redist.x86.exe
 - mysql-5.5.62-win32.msi
 - HeidiSQL_12.3.0.6589_Setup.exe
+- osTicket-v1.15.8.zip
 
 We will use these files to install osTicket and some of the dependencies.
 
@@ -65,6 +66,92 @@ Include IIS Management Console
 Internet Information Services > Web Management Tools > [X] IIS Management Console
 
 <img width="286" alt="Screenshot 2024-04-02 at 11 19 59 PM" src="https://github.com/sirmichaelyoung/osticket-prereqs/assets/163785883/eb534054-8543-4cd1-85ad-7d579a506fc6">
+
+
+Now, Installations:
+
+download and install PHP Manager for IIS (PHPManagerForIIS_V1.5.0.msi)
+
+download and install the Rewrite Module (rewrite_amd64_en-US.msi)
+
+- Open File Explorer, create the directory C:\PHP
+
+download and unzip/extract PHP 7.3.8 (php-7.3.8-nts-Win32-VC15-x86.zip) into C:\PHP
+
+download and install VC_redist.x86.exe.
+
+download and install MySQL 5.5.62 (mysql-5.5.62-win32.msi)
+ 
+ -Typical Setup > Launch Configuration Wizard (after install) > Standard Configuration > (example; Password1)
+
+Run IIS as an Administrator
+
+Register PHP from within IIS
+
+<img width="513" alt="Screenshot 2024-04-03 at 12 22 33 PM" src="https://github.com/sirmichaelyoung/osticket-prereqs/assets/163785883/1c2b9472-23c2-4be1-89b6-04ebed9100f7">
+
+Designate the PHP Executable File Path as C:\PHP\php-cgi.exe
+
+*Within ISS, restart the server under Manage Server Actions 
+
+On to osTicket,
+
+Extract osTicket-v1.15.8.zip, copy "upload" folder into C:\inetpub\wwwroot
+
+-Rename "upload" to "osTicket" within C:\inetpub\wwwroot
+
+*Within ISS, restart the server under Manage Server Actions 
+
+Go to sites > Default > osTicket
+
+<img width="193" alt="Screenshot 2024-04-03 at 12 36 40 PM" src="https://github.com/sirmichaelyoung/osticket-prereqs/assets/163785883/6dfd3d5c-b325-48f8-88be-1613e3cdcbb7">
+
+On the right, click “Browse *:80”
+
+This will bring you to the osTicket Installation page, but some extensions are not yet enabled.
+
+<img width="418" alt="Screenshot 2024-04-03 at 12 38 54 PM" src="https://github.com/sirmichaelyoung/osticket-prereqs/assets/163785883/f92a2436-f225-49a8-95fc-19d28cb6e3bd">
+
+Open IIS, sites > Default > osTicket
+
+Open PHP Manager
+Click “Enable or disable an extension”
+
+<img width="255" alt="Screenshot 2024-04-03 at 12 42 20 PM" src="https://github.com/sirmichaelyoung/osticket-prereqs/assets/163785883/81fb28f1-a864-48ac-834e-3e6850ddfb76">
+
+- Enable: php_imap.dll
+- Enable: php_intl.dll
+- Enable: php_opcache.dll
+
+Within C:\inetpub\wwwroot\osTicket\include
+
+-Rename: ost-sampleconfig.php to: ost-config.php
+
+Open ost-config.php Properties > Security > Advanced
+
+Disable inheritance > Remove All
+
+New > add Everyone > Full Control
+
+<img width="265" alt="Screenshot 2024-04-03 at 12 52 04 PM" src="https://github.com/sirmichaelyoung/osticket-prereqs/assets/163785883/5956f738-0ce1-40c0-9a99-fe92f431385e">
+
+Download and install HeidiSQL_12.3.0.6589_Setup.exe
+- Open Heidi SQL
+- Create a new session, root/Password1
+- Connect to the session
+- Create a database called “osTicket”
+
+Continue Setting up osTicket in the browser (click Continue)
+- Name Helpdesk
+- Default email (receives email from customers)
+- MySQL Database: osTicket
+- MySQL Username: root
+- MySQL Password: Password1
+- Install
+
+<img width="356" alt="Screenshot 2024-04-03 at 1 30 47 PM" src="https://github.com/sirmichaelyoung/osticket-prereqs/assets/163785883/afabbfa8-47f9-485d-90f9-f3f3343fb835">
+
+
 
 
 </p>
