@@ -157,3 +157,7 @@ Go to C:\inetpub\wwwroot\osTicket\include
 Useful reference links
 - help desk login page: http://localhost/osTicket/scp/login.php
 - End Users osTicket URL: http://localhost/osTicket/
+
+This concludes osTicket Instillation. 
+
+Continue [osTicket: Post-Installation Configuration](https://github.com/sirmichaelyoung/post-install-config)
